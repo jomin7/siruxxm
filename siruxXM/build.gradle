@@ -1,0 +1,25 @@
+plugins {
+id 'java'
+id 'application'
+}
+group = 'com.example'
+version = '0.1.0-SNAPSHOT'
+application {
+mainClass = 'com.siriusxm.example.cart.Application'
+}
+java {
+toolchain {
+languageVersion = JavaLanguageVersion.of(21)
+vendor = JvmVendorSpec.ADOPTIUM
+}
+}
+repositories {
+mavenCentral()
+}
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+}
+test {
+useJUnitPlatform()
+}
